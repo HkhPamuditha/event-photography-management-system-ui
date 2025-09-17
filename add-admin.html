@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Admin - Capturely Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/admin-dashboard.css">
+    <link rel="stylesheet" href="/css/add-admin.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <i class="fas fa-camera"></i>
+                    <span>Capturely</span>
+                </a>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li class="nav-item">
+                    <a href="admin-dashboard.html" class="nav-link current-page">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photographer-assignment.html" class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-dashboard.html" class="nav-link">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Admin</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photographers-management.html" class="nav-link">
+                        <i class="fas fa-camera-retro"></i>
+                        <span>Photographers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Packages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Albums</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        <span>Equipment</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="admin-login.html" class="nav-link logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle d-lg-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Welcome Nuwantha</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="https://via.placeholder.com/40x40" alt="Admin Profile" class="profile-image">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="admin-login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Breadcrumb -->
+                <nav aria-label="breadcrumb" class="breadcrumb-nav">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="admin-dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="admin-dashboard.html">Admin</a></li>
+                        <li class="breadcrumb-item active">New Admin</li>
+                    </ol>
+                </nav>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Form Header -->
+                        <div class="form-header">
+                            <div class="form-title-section">
+                                <h2 class="form-title">New Admin</h2>
+                                <p class="form-subtitle">Add a new administrator to the system</p>
+                            </div>
+                            <div class="form-actions-section">
+                                <button type="submit" class="btn btn-primary add-admin-btn" form="newAdminForm">
+                                    <i class="fas fa-user-plus me-2"></i>
+                                    Add Admin
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Main Form -->
+                        <div class="form-container">
+                            <form id="newAdminForm" class="admin-form">
+                                <!-- Personal Information Section -->
+                                <div class="form-section">
+                                    <h3 class="section-title">
+                                        <i class="fas fa-user-tie me-2"></i>
+                                        Administrator Information
+                                    </h3>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="firstName" class="form-label required">First Name</label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control admin-input" 
+                                                id="firstName" 
+                                                placeholder="Enter admin's first name"
+                                                required
+                                            >
+                                            <div class="invalid-feedback">Please enter a valid first name.</div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="lastName" class="form-label required">Last Name</label>
+                                            <input 
+                                                type="text" 
+                                                class="form-control admin-input" 
+                                                id="lastName" 
+                                                placeholder="Enter admin's last name"
+                                                required
+                                            >
+                                            <div class="invalid-feedback">Please enter a valid last name.</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="email" class="form-label required">Email</label>
+                                        <input 
+                                            type="email" 
+                                            class="form-control admin-input" 
+                                            id="email" 
+                                            placeholder="Enter admin's email address"
+                                            required
+                                        >
+                                        <div class="invalid-feedback">Please enter a valid email address.</div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="mobile" class="form-label required">Mobile Number</label>
+                                        <input 
+                                            type="tel" 
+                                            class="form-control admin-input" 
+                                            id="mobile" 
+                                            placeholder="Enter admin's mobile number"
+                                            required
+                                        >
+                                        <div class="invalid-feedback">Please enter a valid mobile number.</div>
+                                    </div>
+                                </div>
+
+                                <!-- Administrative Details Section -->
+                                <div class="form-section">
+                                    <h3 class="section-title">
+                                        <i class="fas fa-cogs me-2"></i>
+                                        Administrative Details
+                                    </h3>
+                                    
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="role" class="form-label required">Admin Role</label>
+                                            <select class="form-select admin-input" id="role" required>
+                                                <option value="" disabled selected>Select admin role</option>
+                                                <option value="super_admin">Super Administrator</option>
+                                                <option value="admin">Administrator</option>
+                                                <option value="manager">Manager</option>
+                                                <option value="moderator">Moderator</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please select an admin role.</div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="department" class="form-label">Department</label>
+                                            <select class="form-select admin-input" id="department">
+                                                <option value="" disabled selected>Select department</option>
+                                                <option value="operations">Operations</option>
+                                                <option value="customer_service">Customer Service</option>
+                                                <option value="marketing">Marketing</option>
+                                                <option value="finance">Finance</option>
+                                                <option value="technical">Technical</option>
+                                                <option value="hr">Human Resources</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label for="startDate" class="form-label required">Start Date</label>
+                                            <input 
+                                                type="date" 
+                                                class="form-control admin-input" 
+                                                id="startDate" 
+                                                required
+                                            >
+                                            <div class="invalid-feedback">Please select a start date.</div>
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label for="status" class="form-label">Initial Status</label>
+                                            <select class="form-select admin-input" id="status">
+                                                <option value="pending" selected>Pending Approval</option>
+                                                <option value="active">Active</option>
+                                                <option value="inactive">Inactive</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Permissions Section -->
+                                <div class="form-section">
+                                    <h3 class="section-title">
+                                        <i class="fas fa-shield-alt me-2"></i>
+                                        Permissions & Access
+                                    </h3>
+                                    
+                                    <div class="permissions-grid">
+                                        <div class="permission-group">
+                                            <h6 class="permission-group-title">User Management</h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="manage_admins">
+                                                <label class="form-check-label" for="manage_admins">
+                                                    Manage Administrators
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="manage_photographers">
+                                                <label class="form-check-label" for="manage_photographers">
+                                                    Manage Photographers
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="manage_customers">
+                                                <label class="form-check-label" for="manage_customers">
+                                                    Manage Customers
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="permission-group">
+                                            <h6 class="permission-group-title">Booking Management</h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="manage_bookings">
+                                                <label class="form-check-label" for="manage_bookings">
+                                                    Manage Bookings
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="assign_photographers">
+                                                <label class="form-check-label" for="assign_photographers">
+                                                    Assign Photographers
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="view_reports">
+                                                <label class="form-check-label" for="view_reports">
+                                                    View Reports
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="permission-group">
+                                            <h6 class="permission-group-title">Financial Access</h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="manage_payments">
+                                                <label class="form-check-label" for="manage_payments">
+                                                    Manage Payments
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="view_financial_reports">
+                                                <label class="form-check-label" for="view_financial_reports">
+                                                    View Financial Reports
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <div class="permission-group">
+                                            <h6 class="permission-group-title">System Access</h6>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="system_settings">
+                                                <label class="form-check-label" for="system_settings">
+                                                    System Settings
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="backup_restore">
+                                                <label class="form-check-label" for="backup_restore">
+                                                    Backup & Restore
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Additional Information Section -->
+                                <div class="form-section">
+                                    <h3 class="section-title">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Additional Information
+                                    </h3>
+                                    
+                                    <div class="mb-3">
+                                        <label for="notes" class="form-label">Notes</label>
+                                        <textarea 
+                                            class="form-control admin-input" 
+                                            id="notes" 
+                                            rows="3"
+                                            placeholder="Additional notes about the administrator (optional)"
+                                        ></textarea>
+                                        <div class="form-text">Optional: Any additional information or special notes</div>
+                                    </div>
+                                </div>
+
+                                <!-- Form Actions -->
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary me-3" onclick="discardForm()">
+                                        <i class="fas fa-times me-2"></i>
+                                        Discard
+                                    </button>
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="fas fa-user-plus me-2"></i>
+                                        Add Admin
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center py-4">
+                    <div class="success-icon mb-3">
+                        <i class="fas fa-check-circle text-success"></i>
+                    </div>
+                    <h5 class="mb-3">Administrator Added Successfully!</h5>
+                    <p class="mb-3" id="successMessage">The new administrator has been added to the system.</p>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary me-2" data-bs-dismiss="modal">
+                            Add Another
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="goToAdminsList()">
+                            View All Admins
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/add-admin.js"></script>
+</body>
+</html>

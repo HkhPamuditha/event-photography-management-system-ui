@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Capturely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/admin-dashboard.css">
+    <link rel="stylesheet" href="/css/photographers-management.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <i class="fas fa-camera"></i>
+                    <span>Capturely</span>
+                </a>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photographer-assignment.html" class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link current-page">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Admin</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="photographers-management.html" class="nav-link">
+                        <i class="fas fa-camera-retro"></i>
+                        <span>Photographers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Packages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Albums</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        <span>Equipment</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="admin-login.html" class="nav-link logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle d-lg-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Welcome Nuwantha</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="https://via.placeholder.com/40x40" alt="Admin Profile" class="profile-image">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Stats Cards -->
+                <div class="stats-section mb-4">
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon active">
+                                    <i class="fas fa-users-cog"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>8</h3>
+                                    <p>Total Admins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon verified">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>6</h3>
+                                    <p>Active Admins</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon pending">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>2</h3>
+                                    <p>Pending Approval</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon bookings">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>3</h3>
+                                    <p>Super Admins</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Search and Actions Bar -->
+                <div class="content-header">
+                    <div class="search-section">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Search photographers" id="searchInput">
+                        </div>
+                    </div>
+                    <div class="action-section">
+                        <button class="btn btn-outline-secondary me-2" id="exportBtn">
+                            <i class="fas fa-download me-2"></i>Export
+                        </button>
+                        <button class="btn btn-primary add-admin-btn" data-bs-toggle="modal" data-bs-target="#addAdminModal">
+                            <i class="fas fa-plus"></i> Add Admin
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="filter-item">
+                        <label for="statusFilter">Status</label>
+                        <select class="form-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="pending">Pending</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="dateFilter">Date</label>
+                        <select class="form-select" id="dateFilter">
+                            <option value="">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Admin Table -->
+                <div class="table-section">
+                    <div class="table-responsive">
+                        <table class="table admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <span>Sophia Carter</span>
+                                        </div>
+                                    </td>
+                                    <td>sophia.carter@example.com</td>
+                                    <td>(555) 123-4567</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <span class="action-link view-btn">View</span>
+                                            <span class="text-muted"> / </span>
+                                            <span class="action-link edit-btn">Edit</span>
+                                            <span class="text-muted"> / </span>
+                                            <span class="action-link delete-btn text-danger">Delete</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <span>Ethan Bennett</span>
+                                        </div>
+                                    </td>
+                                    <td>ethan.bennett@example.com</td>
+                                    <td>(555) 987-6543</td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <span class="action-link view-btn">View</span>
+                                            <span class="text-muted"> / </span>
+                                            <span class="action-link edit-btn">Edit</span>
+                                            <span class="text-muted"> / </span>
+                                            <span class="action-link delete-btn text-danger">Delete</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Olivia Hayes</span>
+                                        </div>
+                                    </td>
+                                    <td>olivia.hayes@example.com</td>
+                                    <td>(555) 246-8013</td>
+                                    <td><span class="role-badge moderator">Moderator</span></td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Liam Foster</span>
+                                        </div>
+                                    </td>
+                                    <td>liam.foster@example.com</td>
+                                    <td>(555) 369-1470</td>
+                                    <td><span class="role-badge admin">Admin</span></td>
+                                    <td><span class="status-badge inactive">Inactive</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Ava Morgan</span>
+                                        </div>
+                                    </td>
+                                    <td>ava.morgan@example.com</td>
+                                    <td>(555) 789-0123</td>
+                                    <td><span class="role-badge moderator">Moderator</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Noah Parker</span>
+                                        </div>
+                                    </td>
+                                    <td>noah.parker@example.com</td>
+                                    <td>(555) 456-7890</td>
+                                    <td><span class="role-badge admin">Admin</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Isabella Reed</span>
+                                        </div>
+                                    </td>
+                                    <td>isabella.reed@example.com</td>
+                                    <td>(555) 654-3210</td>
+                                    <td><span class="role-badge moderator">Moderator</span></td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Jackson Cole</span>
+                                        </div>
+                                    </td>
+                                    <td>jackson.cole@example.com</td>
+                                    <td>(555) 111-2233</td>
+                                    <td><span class="role-badge admin">Admin</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="admin-info">
+                                            <img src="https://via.placeholder.com/32x32" alt="Admin" class="admin-avatar">
+                                            <span>Mia Hughes</span>
+                                        </div>
+                                    </td>
+                                    <td>mia.hughes@example.com</td>
+                                    <td>(555) 333-4455</td>
+                                    <td><span class="role-badge moderator">Moderator</span></td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Admin pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Admin Modal -->
+    <div class="modal fade" id="addAdminModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Admin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addAdminForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Role</label>
+                            <select class="form-select" id="role" required>
+                                <option value="">Select Role</option>
+                                <option value="super-admin">Super Admin</option>
+                                <option value="admin">Admin</option>
+                                <option value="moderator">Moderator</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="confirmPassword" class="form-label">Confirm Password</label>
+                            <input type="password" class="form-control" id="confirmPassword" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" form="addAdminForm">Add Admin</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/admin-dashboard.js"></script>
+    <script src="/js/admin-management.js"></script>
+</body>
+</html>

@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photographers Management - Capturely Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/admin-dashboard.css">
+    <link rel="stylesheet" href="/css/photographers-management.css">
+</head>
+<body>
+    <div class="admin-wrapper">
+        <!-- Sidebar -->
+        <nav class="admin-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="sidebar-brand">
+                    <i class="fas fa-camera"></i>
+                    <span>Capturely</span>
+                </a>
+            </div>
+            
+            <ul class="sidebar-nav">
+                <li class="nav-item">
+                    <a href="admin-dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-calendar-check"></i>
+                        <span>Bookings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="admin-dashboard.html" class="nav-link">
+                        <i class="fas fa-users-cog"></i>
+                        <span>Admin</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link current-page">
+                        <i class="fas fa-camera-retro"></i>
+                        <span>Photographers</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-box"></i>
+                        <span>Packages</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-credit-card"></i>
+                        <span>Payments</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-star"></i>
+                        <span>Reviews</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-images"></i>
+                        <span>Albums</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-tools"></i>
+                        <span>Equipment</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <a href="admin-login.html" class="nav-link logout-link">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
+                </a>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Top Header -->
+            <header class="admin-header">
+                <div class="header-left">
+                    <button class="sidebar-toggle d-lg-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <h1 class="page-title">Welcome Nuwantha</h1>
+                </div>
+                <div class="header-right">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="admin-profile">
+                        <img src="https://via.placeholder.com/40x40" alt="Admin Profile" class="profile-image">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user"></i> Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="admin-login.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="admin-content">
+                <!-- Search and Actions Bar -->
+                <div class="content-header">
+                    <div class="search-section">
+                        <div class="search-bar">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Search photographers" id="searchInput">
+                        </div>
+                    </div>
+                    <div class="action-section">
+                        <button class="btn btn-outline-secondary me-2" id="exportBtn">
+                            <i class="fas fa-download me-2"></i>Export
+                        </button>
+                        <button class="btn btn-primary add-photographer-btn" data-bs-toggle="modal" data-bs-target="#addPhotographerModal">
+                            <i class="fas fa-plus"></i> Add Photographer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-section mb-4">
+                    <div class="row g-3">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon active">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>24</h3>
+                                    <p>Active Photographers</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon pending">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>5</h3>
+                                    <p>Pending Approval</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon verified">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>18</h3>
+                                    <p>Verified Profiles</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="stats-card">
+                                <div class="stats-icon bookings">
+                                    <i class="fas fa-calendar-check"></i>
+                                </div>
+                                <div class="stats-content">
+                                    <h3>156</h3>
+                                    <p>Total Bookings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="filter-item">
+                        <label for="statusFilter">Status</label>
+                        <select class="form-select" id="statusFilter">
+                            <option value="">All Status</option>
+                            <option value="active">Active</option>
+                            <option value="pending">Pending</option>
+                            <option value="inactive">Inactive</option>
+                            <option value="suspended">Suspended</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="specialtyFilter">Specialty</label>
+                        <select class="form-select" id="specialtyFilter">
+                            <option value="">All Specialties</option>
+                            <option value="wedding">Wedding</option>
+                            <option value="portrait">Portrait</option>
+                            <option value="event">Event</option>
+                            <option value="corporate">Corporate</option>
+                            <option value="fashion">Fashion</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="ratingFilter">Rating</label>
+                        <select class="form-select" id="ratingFilter">
+                            <option value="">All Ratings</option>
+                            <option value="5">5 Stars</option>
+                            <option value="4">4+ Stars</option>
+                            <option value="3">3+ Stars</option>
+                            <option value="2">2+ Stars</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="locationFilter">Location</label>
+                        <select class="form-select" id="locationFilter">
+                            <option value="">All Locations</option>
+                            <option value="colombo">Colombo</option>
+                            <option value="kandy">Kandy</option>
+                            <option value="galle">Galle</option>
+                            <option value="jaffna">Jaffna</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Photographers Table -->
+                <div class="table-section">
+                    <div class="table-responsive">
+                        <table class="table photographer-table">
+                            <thead>
+                                <tr>
+                                    <th>Photographer</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Specialty</th>
+                                    <th>Rating</th>
+                                    <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="photographer-info">
+                                            <img src="https://via.placeholder.com/40x40" alt="Photographer" class="photographer-avatar">
+                                            <div class="photographer-details">
+                                                <span class="photographer-name">Sophia Carter</span>
+                                                <small class="photographer-location">Colombo, Sri Lanka</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>sophia.carter@example.com</td>
+                                    <td>(555) 123-4567</td>
+                                    <td><span class="specialty-badge wedding">Wedding</span></td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-text">4.9 (45)</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View Profile">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-warning suspend-btn" title="Suspend">
+                                                <i class="fas fa-pause"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="photographer-info">
+                                            <img src="https://via.placeholder.com/40x40" alt="Photographer" class="photographer-avatar">
+                                            <div class="photographer-details">
+                                                <span class="photographer-name">Ethan Bennett</span>
+                                                <small class="photographer-location">Kandy, Sri Lanka</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>ethan.bennett@example.com</td>
+                                    <td>(555) 987-6543</td>
+                                    <td><span class="specialty-badge portrait">Portrait</span></td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span class="rating-text">4.2 (28)</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View Profile">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-warning suspend-btn" title="Suspend">
+                                                <i class="fas fa-pause"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="photographer-info">
+                                            <img src="https://via.placeholder.com/40x40" alt="Photographer" class="photographer-avatar">
+                                            <div class="photographer-details">
+                                                <span class="photographer-name">Olivia Hayes</span>
+                                                <small class="photographer-location">Galle, Sri Lanka</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>olivia.hayes@example.com</td>
+                                    <td>(555) 246-8013</td>
+                                    <td><span class="specialty-badge event">Event</span></td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-text">4.8 (67)</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View Profile">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-success approve-btn" title="Approve">
+                                                <i class="fas fa-check"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger reject-btn" title="Reject">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="photographer-info">
+                                            <img src="https://via.placeholder.com/40x40" alt="Photographer" class="photographer-avatar">
+                                            <div class="photographer-details">
+                                                <span class="photographer-name">Liam Foster</span>
+                                                <small class="photographer-location">Colombo, Sri Lanka</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>liam.foster@example.com</td>
+                                    <td>(555) 369-1470</td>
+                                    <td><span class="specialty-badge corporate">Corporate</span></td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="far fa-star"></i>
+                                            </div>
+                                            <span class="rating-text">4.3 (31)</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge suspended">Suspended</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View Profile">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-success reactivate-btn" title="Reactivate">
+                                                <i class="fas fa-play"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="photographer-info">
+                                            <img src="https://via.placeholder.com/40x40" alt="Photographer" class="photographer-avatar">
+                                            <div class="photographer-details">
+                                                <span class="photographer-name">Ava Morgan</span>
+                                                <small class="photographer-location">Jaffna, Sri Lanka</small>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>ava.morgan@example.com</td>
+                                    <td>(555) 789-0123</td>
+                                    <td><span class="specialty-badge fashion">Fashion</span></td>
+                                    <td>
+                                        <div class="rating-display">
+                                            <div class="stars">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <span class="rating-text">5.0 (89)</span>
+                                        </div>
+                                    </td>
+                                    <td><span class="status-badge active">Active</span></td>
+                                    <td>
+                                        <div class="action-buttons">
+                                            <button class="btn btn-sm btn-outline-primary view-btn" title="View Profile">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-secondary edit-btn" title="Edit">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-warning suspend-btn" title="Suspend">
+                                                <i class="fas fa-pause"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-outline-danger delete-btn" title="Delete">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Photographers pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                        </li>
+                        <li class="page-item active">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Photographer Modal -->
+    <div class="modal fade" id="addPhotographerModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add New Photographer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addPhotographerForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email Address</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="phone" class="form-label">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="specialty" class="form-label">Specialty</label>
+                                <select class="form-select" id="specialty" required>
+                                    <option value="">Select Specialty</option>
+                                    <option value="wedding">Wedding</option>
+                                    <option value="portrait">Portrait</option>
+                                    <option value="event">Event</option>
+                                    <option value="corporate">Corporate</option>
+                                    <option value="fashion">Fashion</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="location" class="form-label">Location</label>
+                                <select class="form-select" id="location" required>
+                                    <option value="">Select Location</option>
+                                    <option value="colombo">Colombo</option>
+                                    <option value="kandy">Kandy</option>
+                                    <option value="galle">Galle</option>
+                                    <option value="jaffna">Jaffna</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="experience" class="form-label">Years of Experience</label>
+                            <input type="number" class="form-control" id="experience" min="0" max="50" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" rows="3" placeholder="Brief description about the photographer"></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="submit" class="btn btn-primary" form="addPhotographerForm">Add Photographer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="/js/photographers-management.js"></script>
+</body>
+</html>

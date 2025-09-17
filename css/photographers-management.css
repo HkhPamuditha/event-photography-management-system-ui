@@ -1,0 +1,494 @@
+/* Photographers Management Specific Styles using CSS Variables */
+
+/* Stats Cards */
+.stats-section {
+    margin-bottom: 2rem;
+}
+
+.stats-card {
+    background-color: var(--secondary-white);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e6ed;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stats-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.stats-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--secondary-white);
+}
+
+.stats-icon.active {
+    background: linear-gradient(135deg, var(--interactive-success-green), #1e7e34);
+}
+
+.stats-icon.pending {
+    background: linear-gradient(135deg, var(--interactive-warning-orange), #cc7a00);
+}
+
+.stats-icon.verified {
+    background: linear-gradient(135deg, var(--interactive-info-blue), #0056b3);
+}
+
+.stats-icon.bookings {
+    background: linear-gradient(135deg, var(--primary-deep-blue), #07305d);
+}
+
+.stats-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1;
+}
+
+.stats-content p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Photographer Table Specific Styles */
+.photographer-table {
+    margin: 0;
+}
+
+.photographer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 200px;
+}
+
+.photographer-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-light-gray);
+}
+
+.photographer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.photographer-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.9rem;
+}
+
+.photographer-location {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Specialty Badges */
+.specialty-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.specialty-badge.wedding {
+    background-color: rgba(255, 20, 147, 0.1);
+    color: #e91e63;
+}
+
+.specialty-badge.portrait {
+    background-color: rgba(156, 39, 176, 0.1);
+    color: #9c27b0;
+}
+
+.specialty-badge.event {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: var(--interactive-warning-orange);
+}
+
+.specialty-badge.corporate {
+    background-color: rgba(10, 37, 64, 0.1);
+    color: var(--primary-deep-blue);
+}
+
+.specialty-badge.fashion {
+    background-color: rgba(233, 30, 99, 0.1);
+    color: #e91e63;
+}
+
+/* Rating Display */
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.stars i {
+    color: #ffc107;
+    font-size: 0.875rem;
+}
+
+.stars i.far {
+    color: #e0e6ed;
+}
+
+.rating-text {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Status Badges - Extended */
+.status-badge.suspended {
+    background-color: rgba(220, 53, 69, 0.1);
+    color: var(--interactive-error-red);
+}
+
+.status-badge.inactive {
+    background-color: rgba(108, 117, 125, 0.1);
+    color: #6c757d;
+}
+
+/* Action Buttons - Extended */
+.suspend-btn:hover {
+    background-color: var(--interactive-warning-orange);
+    border-color: var(--interactive-warning-orange);
+    color: var(--secondary-white);
+}
+
+.approve-btn:hover {
+    background-color: var(--interactive-success-green);
+    border-color: var(--interactive-success-green);
+    color: var(--secondary-white);
+}
+
+.reject-btn:hover {
+    background-color: var(--interactive-error-red);
+    border-color: var(--interactive-error-red);
+    color: var(--secondary-white);
+}
+
+.reactivate-btn:hover {
+    background-color: var(--interactive-success-green);
+    border-color: var(--interactive-success-green);
+    color: var(--secondary-white);
+}
+
+/* Export Button */
+.action-section .btn-outline-secondary {
+    border-color: var(--text-muted);
+    color: var(--text-secondary);
+}
+
+.action-section .btn-outline-secondary:hover {
+    background-color: var(--text-secondary);
+    border-color: var(--text-secondary);
+    color: var(--secondary-white);
+}
+
+/* Enhanced Filters */
+.filters-section {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    background-color: var(--secondary-white);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 160px;
+}
+
+.filter-item label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.875rem;
+}
+
+.filter-item select {
+    border: 2px solid #e0e6ed;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.3s ease;
+}
+
+.filter-item select:focus {
+    border-color: var(--primary-deep-blue);
+    box-shadow: 0 0 0 0.2rem rgba(10, 37, 64, 0.15);
+}
+
+/* Modal Enhancements */
+.modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--secondary-light-gray), #f8f9fa);
+    border-bottom: 1px solid #e0e6ed;
+    border-radius: 1rem 1rem 0 0;
+    padding: 1.5rem 2rem;
+}
+
+.modal-title {
+    color: var(--text-primary);
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    border-top: 1px solid #e0e6ed;
+    padding: 1rem 2rem;
+    background-color: #f8f9fa;
+    border-radius: 0 0 1rem 1rem;
+}
+
+/* Form Enhancements */
+.form-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.form-control,
+.form-select {
+    border: 2px solid #e0e6ed;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-deep-blue);
+    box-shadow: 0 0 0 0.2rem rgba(10, 37, 64, 0.15);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .stats-section .row {
+        gap: 1rem;
+    }
+    
+    .stats-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+    }
+    
+    .stats-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 1.25rem;
+    }
+    
+    .stats-content h3 {
+        font-size: 1.75rem;
+    }
+    
+    .filters-section {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .filter-item {
+        min-width: auto;
+    }
+    
+    .content-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+    
+    .action-section {
+        display: flex;
+        gap: 0.5rem;
+    }
+    
+    .action-section .btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .photographer-info {
+        min-width: 150px;
+    }
+    
+    .photographer-table {
+        font-size: 0.8rem;
+    }
+    
+    .photographer-table thead th,
+    .photographer-table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+    
+    .action-buttons .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.75rem;
+    }
+    
+    .specialty-badge,
+    .status-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.6rem;
+    }
+    
+    .rating-display {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
+    
+    .stars i {
+        font-size: 0.75rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .modal-header,
+    .modal-footer {
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .stats-card {
+        padding: 1rem;
+    }
+    
+    .filters-section {
+        padding: 1rem;
+    }
+    
+    .photographer-avatar {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .photographer-name {
+        font-size: 0.8rem;
+    }
+    
+    .photographer-location {
+        font-size: 0.7rem;
+    }
+    
+    .table-responsive {
+        font-size: 0.75rem;
+    }
+}
+
+/* Loading States */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    border-radius: 0.75rem;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--secondary-light-gray);
+    border-top-color: var(--primary-deep-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Print Styles */
+@media print {
+    .admin-sidebar,
+    .admin-header,
+    .action-buttons,
+    .pagination,
+    .content-header,
+    .filters-section {
+        display: none !important;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+    }
+    
+    .admin-content {
+        padding: 0;
+    }
+    
+    .table-section {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+    
+    .photographer-table {
+        font-size: 0.8rem;
+    }
+    
+    .photographer-table thead th,
+    .photographer-table tbody td {
+        padding: 0.5rem;
+    }
+}

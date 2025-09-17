@@ -1,0 +1,627 @@
+/* Photographer Assignment Specific Styles using CSS Variables */
+
+/* Breadcrumb Navigation */
+.breadcrumb-nav {
+    margin-bottom: 1.5rem;
+}
+
+.breadcrumb {
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.breadcrumb-item a {
+    color: var(--primary-deep-blue);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+    color: #07305d;
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-secondary);
+}
+
+/* Booking Header */
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid var(--secondary-light-gray);
+}
+
+.booking-title {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.booking-date {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin: 0.5rem 0 0 0;
+}
+
+.booking-status-section {
+    text-align: right;
+}
+
+.status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.pending {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: var(--interactive-warning-orange);
+    border: 2px solid rgba(255, 152, 0, 0.2);
+}
+
+.status-badge.assigned {
+    background-color: rgba(40, 167, 69, 0.1);
+    color: var(--interactive-success-green);
+    border: 2px solid rgba(40, 167, 69, 0.2);
+}
+
+/* Detail Cards */
+.detail-card,
+.assignment-card,
+.assignment-status-card,
+.timeline-card {
+    background-color: var(--secondary-white);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e6ed;
+}
+
+.card-title {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-title i {
+    color: var(--primary-deep-blue);
+}
+
+/* Detail Grid */
+.detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.detail-item label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.detail-item span {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Client Information */
+.client-info {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.client-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--secondary-light-gray);
+}
+
+.client-details h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.client-contact {
+    color: var(--text-secondary);
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+}
+
+.client-contact i {
+    color: var(--primary-deep-blue);
+    width: 16px;
+}
+
+/* Package Information */
+.package-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.package-details h4 {
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+}
+
+.package-description {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.package-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.feature-tag {
+    background-color: var(--secondary-light-gray);
+    color: var(--text-secondary);
+    padding: 0.375rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.feature-tag i {
+    color: var(--interactive-success-green);
+}
+
+.package-price {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.price-label {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.price-amount {
+    color: var(--text-primary);
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Requirements List */
+.requirements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.requirement-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--secondary-light-gray);
+    border-radius: 0.5rem;
+}
+
+.requirement-item i {
+    color: var(--primary-deep-blue);
+    font-size: 1.1rem;
+}
+
+.requirement-item span {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* Assignment Form */
+.photographer-select {
+    border: 2px solid #e0e6ed;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.photographer-select:focus {
+    border-color: var(--primary-deep-blue);
+    box-shadow: 0 0 0 0.2rem rgba(10, 37, 64, 0.15);
+}
+
+.photographer-select option:disabled {
+    color: var(--text-muted);
+    background-color: var(--secondary-light-gray);
+}
+
+/* Photographer Preview */
+.photographer-preview {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: var(--secondary-light-gray);
+    border-radius: 0.5rem;
+}
+
+.photographer-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.photographer-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--secondary-white);
+}
+
+.photographer-info h5 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.photographer-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.rating {
+    color: var(--interactive-warning-orange);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.specialty {
+    color: var(--primary-deep-blue);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.experience {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* Assignment Actions */
+.assignment-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.assignment-actions .btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}
+
+/* Current Assignment Status */
+.no-assignment {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+}
+
+.no-assignment i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text-muted);
+}
+
+.no-assignment p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.assigned-photographer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.assigned-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex: 1;
+}
+
+.assigned-info .photographer-avatar img {
+    width: 40px;
+    height: 40px;
+}
+
+.photographer-details h5 {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+}
+
+.photographer-details p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin: 0;
+}
+
+.assignment-date {
+    margin-top: 0.25rem;
+}
+
+.assignment-actions-inline {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.assignment-actions-inline .btn {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0.75rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #e0e6ed;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -2rem;
+    top: 0.25rem;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--interactive-success-green);
+    border: 3px solid var(--secondary-white);
+    box-shadow: 0 0 0 2px var(--interactive-success-green);
+}
+
+.timeline-item.pending .timeline-marker {
+    background-color: var(--interactive-warning-orange);
+    box-shadow: 0 0 0 2px var(--interactive-warning-orange);
+}
+
+.timeline-content h6 {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0 0 0.5rem 0;
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    margin: 0 0 0.5rem 0;
+}
+
+.timeline-content small {
+    font-size: 0.8rem;
+}
+
+/* Form Styling */
+.form-label {
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-control {
+    border: 2px solid #e0e6ed;
+    border-radius: 0.5rem;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: var(--primary-deep-blue);
+    box-shadow: 0 0 0 0.2rem rgba(10, 37, 64, 0.15);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Modal Enhancements */
+.modal-content {
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15);
+}
+
+.success-icon i {
+    font-size: 4rem;
+    color: var(--interactive-success-green);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .booking-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .booking-status-section {
+        text-align: left;
+    }
+    
+    .detail-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .package-info {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .package-price {
+        text-align: left;
+        align-items: flex-start;
+    }
+    
+    .client-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .assigned-photographer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .assignment-actions-inline {
+        width: 100%;
+        justify-content: stretch;
+    }
+    
+    .assignment-actions-inline .btn {
+        flex: 1;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .detail-card,
+    .assignment-card,
+    .assignment-status-card,
+    .timeline-card {
+        padding: 1.5rem;
+    }
+    
+    .booking-title {
+        font-size: 1.75rem;
+    }
+    
+    .package-features {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .assignment-actions {
+        flex-direction: column;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+    
+    .timeline-marker {
+        left: -1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .admin-content {
+        padding: 1rem;
+    }
+    
+    .detail-card,
+    .assignment-card,
+    .assignment-status-card,
+    .timeline-card {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .card-title {
+        font-size: 1.1rem;
+    }
+    
+    .booking-title {
+        font-size: 1.5rem;
+    }
+    
+    .price-amount {
+        font-size: 1.75rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .admin-sidebar,
+    .admin-header,
+    .assignment-actions,
+    .assignment-actions-inline,
+    .breadcrumb-nav {
+        display: none !important;
+    }
+    
+    .admin-main {
+        margin-left: 0;
+    }
+    
+    .admin-content {
+        padding: 0;
+    }
+    
+    .detail-card,
+    .assignment-card,
+    .assignment-status-card,
+    .timeline-card {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+    }
+}
